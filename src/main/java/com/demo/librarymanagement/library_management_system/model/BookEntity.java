@@ -62,4 +62,5 @@ public class BookEntity {
     public void setUpdatedDate(String updatedDate) {
         this.updatedDate = updatedDate;
     }
+
 }

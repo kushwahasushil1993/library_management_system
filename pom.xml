@@ -12,7 +12,7 @@
 	<artifactId>library_management_system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>library_management_system</name>
-	<description>ibrary_management_system project for Creating Apis for book records and Assigned to user</description>
+	<description>library_management_system project for Creating Apis for book records and Assigned to user</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -50,6 +50,26 @@
 			<version>2.1.4.RELEASE</version>
 		</dependency>
 		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-jdk8</artifactId>
+			<version>1.3.0.Beta2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+			<version>2.2.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -67,6 +87,22 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>1.3.0.Beta2</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

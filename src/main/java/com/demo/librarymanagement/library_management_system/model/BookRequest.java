@@ -1,8 +1,15 @@
 package com.demo.librarymanagement.library_management_system.model;
 
+import javax.validation.constraints.NotBlank;
+
 public class BookRequest {
+    @NotBlank(message = "Book name is required")
     private String bookName;
+
+    @NotBlank(message = "Author name is required")
     private String authorName;
+
+    @NotBlank(message = "Request type should be new")
     private String requestType;
     private String createdDate;
     private String updatedDate;

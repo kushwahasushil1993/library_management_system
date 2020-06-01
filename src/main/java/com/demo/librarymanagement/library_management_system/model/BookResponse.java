@@ -7,6 +7,18 @@ public class BookResponse {
     private String requestType;
     private String createdDate;
     private String updatedDate;
+    private String status;
+    private String message;
+    private String errorCode;
+
+
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
 
     public int getId() {
         return id;
@@ -54,5 +66,21 @@ public class BookResponse {
 
     public void setUpdatedDate(String updatedDate) {
         this.updatedDate = updatedDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

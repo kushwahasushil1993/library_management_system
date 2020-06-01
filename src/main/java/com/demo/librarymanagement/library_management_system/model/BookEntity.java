@@ -1,9 +1,6 @@
 package com.demo.librarymanagement.library_management_system.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -11,6 +8,7 @@ public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name = "bookname")
     private String bookName;
     private String authorName;
     private String requestType;

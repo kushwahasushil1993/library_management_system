@@ -1,7 +1,6 @@
 package com.demo.librarymanagement.library_management_system.services;
 
 import com.demo.librarymanagement.library_management_system.model.BookEntity;
-import com.demo.librarymanagement.library_management_system.repo.BookRepo;
 import com.demo.librarymanagement.library_management_system.repo.RetrievalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -23,8 +23,7 @@ public class RetriveBooksController {
 
     @GetMapping(value = "/retriveBooksByName/{BookNameOrAuthorName}")
     public ArrayList<BookEntity> retriveRecords(@PathVariable String BookNameOrAuthorName){
-        ArrayList<BookEntity> availableBooks = retriveBooksService.retriveBooksByName(BookNameOrAuthorName);
-        return availableBooks;
+        return retriveBooksService.retriveBooksByName(BookNameOrAuthorName);
     }
 
     @GetMapping(value = "/retriveAllBooks")

@@ -14,7 +14,7 @@ public class RetriveBooksService {
 
     public ArrayList<BookEntity> retriveBooksByName(String bookNameOrAuthorName) {
         ArrayList<BookEntity> allBooks = (ArrayList<BookEntity>) retrievalRepository.findAll();
-        ArrayList<BookEntity> filteredBooks = new ArrayList<BookEntity>();
+        ArrayList<BookEntity> filteredBooks = new ArrayList<>();
         if(!allBooks.isEmpty()) {
             for (BookEntity bookEntity : allBooks) {
                 if(bookEntity.getAuthorName().equalsIgnoreCase(bookNameOrAuthorName) ||

@@ -30,5 +30,4 @@ public class RetriveBooksController {
     public java.util.List<BookEntity> retriveAllBooks(){
         return retrievalRepository.findAll();
     }
-
 }

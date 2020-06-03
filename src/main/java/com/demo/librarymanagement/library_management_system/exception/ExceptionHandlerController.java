@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
@@ -28,5 +29,31 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
                 errors, "1001");
 
         return new ResponseEntity<>(errorMessageResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(BookNotFoundException.class)
+    public ResponseEntity<Object> handleBookNotFound(MethodArgumentNotValidException ex,
+                                                     HttpHeaders headers, HttpStatus status, WebRequest request){
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        ErrorMessageResponse errorMessageResponse = new ErrorMessageResponse(HttpStatus.NOT_FOUND.name(), errors, "");
+        return new ResponseEntity<>(errorMessageResponse, new HttpHeaders(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<Object> handleUserNotFound(MethodArgumentNotValidException ex,
+                                                     HttpHeaders headers, HttpStatus status, WebRequest request){
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        ErrorMessageResponse errorMessageResponse = new ErrorMessageResponse(HttpStatus.NOT_FOUND.name(), errors, "");
+        return new ResponseEntity<>(errorMessageResponse, new HttpHeaders(), HttpStatus.NOT_FOUND);
     }
 }

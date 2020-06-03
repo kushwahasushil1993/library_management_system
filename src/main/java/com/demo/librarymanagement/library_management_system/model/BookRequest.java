@@ -3,6 +3,8 @@ package com.demo.librarymanagement.library_management_system.model;
 import javax.validation.constraints.NotBlank;
 
 public class BookRequest {
+
+    private int id;
     @NotBlank(message = "Book name is required")
     private String bookName;
 
@@ -14,6 +16,13 @@ public class BookRequest {
     private String createdDate;
     private String updatedDate;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getBookName() {
         return bookName;
     }

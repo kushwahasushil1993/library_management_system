@@ -1,16 +1,21 @@
 package com.demo.librarymanagement.library_management_system.model;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 public class PersonRequest {
 
     private int personId;
+    @NotBlank(message = "first name is required")
     private String firstName;
     private String lastName;
     private String contactInfo;
+    @NotBlank(message = "book issued date is required")
     private String bookIssueDate;
+    @NotBlank(message = "book return date is required")
     private String bookReturnDate;
-    private List<BookEntity> book;
+    private java.lang.Integer book;
+    @NotBlank(message = "email address is required")
     private String email;
 
     public String getEmail() {
@@ -21,11 +26,11 @@ public class PersonRequest {
         this.email = email;
     }
 
-    public List<BookEntity> getBook() {
+    public int getBook() {
         return book;
     }
 
-    public void setBook(List<BookEntity> book) {
+    public void setBook(int book) {
         this.book = book;
     }
 

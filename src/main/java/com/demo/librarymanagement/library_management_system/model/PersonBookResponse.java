@@ -2,14 +2,14 @@ package com.demo.librarymanagement.library_management_system.model;
 
 import java.util.List;
 
-public class PersonResponse {
+public class PersonBookResponse {
     private int personId;
     private String firstName;
     private String lastName;
     private String contactInfo;
     private String bookIssueDate;
     private String bookReturnDate;
-    private int book;
+    private List<BookResponse> book;
     private String email;
 
     public String getEmail() {
@@ -20,11 +20,11 @@ public class PersonResponse {
         this.email = email;
     }
 
-    public int getBook() {
+    public List<BookResponse> getBook() {
         return book;
     }
 
-    public void setBook(int book) {
+    public void setBook(List<BookResponse> book) {
         this.book = book;
     }
 

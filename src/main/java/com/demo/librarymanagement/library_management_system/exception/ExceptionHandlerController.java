@@ -29,5 +29,4 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
 
         return new ResponseEntity<>(errorMessageResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
 }

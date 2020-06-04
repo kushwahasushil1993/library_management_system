@@ -17,8 +17,7 @@ public class PersonEntity {
     private String bookIssueDate;
     private String bookReturnDate;
     @Column(name = "book")
-    @OneToMany(cascade=CascadeType.ALL)
-    private List<BookEntity> book;
+    private int bookId;
     private String email;
 
     public String getEmail() {
@@ -29,12 +28,12 @@ public class PersonEntity {
         this.email = email;
     }
 
-    public List<BookEntity> getBook() {
-        return book;
+    public int getBook() {
+        return bookId;
     }
 
-    public void setBook(List<BookEntity> book) {
-        this.book = book;
+    public void setBook(int book) {
+        this.bookId = book;
     }
 
     public int getPersonId() {

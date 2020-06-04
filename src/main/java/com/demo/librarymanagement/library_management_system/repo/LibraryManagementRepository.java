@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
 @Component("libraryManagementRepository")
-public interface LibraryManagementRepository  extends CrudRepository<BookEntity,Integer> {
+public interface LibraryManagementRepository  extends CrudRepository<BookEntity, java.lang.Integer> {
 
 }
